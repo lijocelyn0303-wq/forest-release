@@ -1,0 +1,11 @@
+{
+  "name": "Forest Release 森林情绪释放室",
+  "description": "沉浸式网页艺术疗愈系统，通过 3D 视觉和互动帮助用户释放压力，找回内心平静。",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

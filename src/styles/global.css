@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: light;
+  /* 文字颜色变量 - 针对浅色背景优化 */
+  --text-primary: #173528;
+  --text-secondary: #315448;
+  --text-muted: rgba(49, 84, 72, 0.6);
+  --text-dark: #0a1f16;
+  --accent-mint: #7EF0B2;
+  --accent-green: #1FC77A;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5faf7;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 深色玻璃拟态 - 用于夜晚背景 */
+.glass-night {
+  background: rgba(238, 255, 244, 0.14);
+  border: 1px solid rgba(220, 255, 235, 0.28);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* 浅色玻璃拟态 - 针对 Little Nature 风格优化 */
+.glass-light {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 40px 100px rgba(45, 90, 70, 0.08);
+  color: var(--text-primary);
+}
+
+/* 雾气流动动画 */
+@keyframes fog {
+  0% {
+    transform: translateX(0) scaleY(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(33%) scaleY(1.1);
+    opacity: 0;
+  }
+}
+
+.animate-fog {
+  animation: fog linear infinite;
+  will-change: transform, opacity;
+}
+
+canvas {
+  touch-action: none;
+  outline: none;
+}
